@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Informais Telecom — Site Oficial
 
-## Getting Started
+Site institucional da **Informais Telecom**, vertente de telecomunicações da Informais Informática.
 
-First, run the development server:
+## Stack
+
+- **Next.js 14** — App Router
+- **TypeScript** — Tipagem estrita
+- **Tailwind CSS** — Estilização utilitária
+- **Google Fonts** — Barlow Condensed + DM Sans
+
+## Identidade Visual
+
+| Cor | Hex | Uso |
+|-----|-----|-----|
+| Vermelho | `#CC1B1B` | Acento principal, CTAs, destaques |
+| Navy | `#2B2E8C` | Fundos secundários, elementos de suporte |
+| Navy Dark | `#1E2070` | Cards, gradientes |
+| Dark | `#0D0D1A` | Background principal |
+
+## Como rodar localmente
 
 ```bash
+# Instalar dependências
+npm install
+
+# Rodar em desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build de produção
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── globals.css        # Estilos globais, animações, fontes
+│   ├── layout.tsx         # Layout raiz com metadata SEO
+│   └── page.tsx           # Página principal
+└── components/
+    ├── Navbar.tsx          # Navegação fixa com scroll detection
+    ├── Hero.tsx            # Seção principal com card de velocidade
+    ├── About.tsx           # Sobre a empresa
+    ├── Services.tsx        # Grid de serviços (6 cards)
+    ├── Plans.tsx           # Planos de internet (3 planos)
+    ├── Contact.tsx         # Formulário de contato + canais
+    └── Footer.tsx          # Rodapé completo com links
+```
 
-## Learn More
+## Seções
 
-To learn more about Next.js, take a look at the following resources:
+1. **Hero** — Headline impactante, card de velocidade animado, stats
+2. **Sobre** — História da empresa, diferenciais, galeria visual
+3. **Serviços** — Performance, Redes Sociais, Streaming, Home Office, Wi-Fi 6, Suporte 24/7
+4. **Planos** — Inicial (200MB/R$85), Intermediário (400MB/R$100), Avançado (600MB/R$115)
+5. **Contato** — Formulário + WhatsApp, E-mail, Localização
+6. **Footer** — Links, redes sociais, legal
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Personalização
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Para adaptar o site à sua realidade, edite:
+- **Preços e velocidades** → `src/components/Plans.tsx`
+- **Número WhatsApp** → Busque por `wa.me/5500000000000` e substitua
+- **Endereço/cidade** → `src/components/Contact.tsx`
+- **Cores** → `tailwind.config.ts` → `theme.extend.colors.brand`
