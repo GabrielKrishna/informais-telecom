@@ -25,29 +25,24 @@ export default function Contact() {
   };
 
   return (
-    <section id="contato" ref={ref} className="relative py-28 overflow-hidden bg-[#080812]">
-      <div className="absolute inset-0 bg-grid opacity-30"/>
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#CC1B1B]/5 rounded-full blur-[120px]"/>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#2B2E8C]/15 rounded-full blur-[120px]"/>
-
-      <div className="absolute top-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" className="w-full">
-          <path d="M0 40 L1440 0 L1440 0 L0 0 Z" fill="#0D0D1A"/>
-        </svg>
-      </div>
+    <section id="contato" ref={ref} className="relative py-28 overflow-hidden bg-white">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-[#FBBF24]"/>
 
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
+
           {/* Left: Info */}
           <div className={`space-y-10 transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
             <div>
-              <span className="font-mono text-[#CC1B1B] text-xs uppercase tracking-widest">// Entre em contato</span>
-              <h2 className="font-display font-black text-5xl md:text-6xl uppercase leading-[0.9] mt-3 text-white">
-                Fale com a <br/>
-                <span className="text-[#CC1B1B]">gente!</span>
+              <span className="inline-block bg-[#EBF5FF] text-[#1A56DB] font-mono text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
+                // Entre em contato
+              </span>
+              <h2 className="font-display font-black text-5xl md:text-6xl uppercase leading-[0.9] text-[#1E293B]">
+                Fale com a{" "}
+                <span className="text-[#1A56DB]">gente!</span>
               </h2>
-              <p className="font-body text-gray-400 text-lg leading-relaxed mt-6">
-                Tem uma dúvida técnica? Quer saber mais sobre nossos planos? Precisa de suporte? Estamos aqui para ajudar. Entre em contato e responderemos em instantes.
+              <p className="font-body text-slate-500 text-lg leading-relaxed mt-6">
+                Dúvida técnica? Quer assinar um plano? Precisa de suporte? Nosso time responde rápido — fale agora pelo WhatsApp ou deixe sua mensagem.
               </p>
             </div>
 
@@ -61,7 +56,7 @@ export default function Contact() {
                   ),
                   label: "WhatsApp", value: "(00) 00000-0000",
                   href: "https://wa.me/5500000000000",
-                  color: "text-[#25D366]", bg: "bg-[#25D366]/10 border-[#25D366]/20",
+                  color: "text-[#25D366]", bg: "bg-[#25D366]/10 border-[#25D366]/30",
                 },
                 {
                   icon: (
@@ -71,7 +66,7 @@ export default function Contact() {
                   ),
                   label: "E-mail", value: "contato@informaistelecom.com.br",
                   href: "mailto:contato@informaistelecom.com.br",
-                  color: "text-[#CC1B1B]", bg: "bg-[#CC1B1B]/10 border-[#CC1B1B]/20",
+                  color: "text-[#1A56DB]", bg: "bg-[#EBF5FF] border-[#1A56DB]/20",
                 },
                 {
                   icon: (
@@ -82,14 +77,14 @@ export default function Contact() {
                   ),
                   label: "Localização", value: "Sua cidade, Estado",
                   href: "#",
-                  color: "text-[#3B3EA0]", bg: "bg-[#2B2E8C]/20 border-[#2B2E8C]/30",
+                  color: "text-[#D97706]", bg: "bg-[#FBBF24]/10 border-[#FBBF24]/30",
                 },
               ].map((item) => (
-                <a key={item.label} href={item.href} className={`flex items-center gap-4 p-4 rounded-xl border ${item.bg} hover:opacity-80 transition-opacity`}>
+                <a key={item.label} href={item.href} className={`flex items-center gap-4 p-4 rounded-xl border ${item.bg} hover:opacity-80 transition-opacity shadow-sm`}>
                   <div className={`${item.color} flex-shrink-0`}>{item.icon}</div>
                   <div>
-                    <div className="font-body text-xs text-gray-500 uppercase tracking-wider">{item.label}</div>
-                    <div className="font-body text-white font-medium text-sm mt-0.5">{item.value}</div>
+                    <div className="font-body text-xs text-slate-400 uppercase tracking-wider">{item.label}</div>
+                    <div className="font-body text-slate-700 font-medium text-sm mt-0.5">{item.value}</div>
                   </div>
                 </a>
               ))}
@@ -98,51 +93,51 @@ export default function Contact() {
 
           {/* Right: Form */}
           <div className={`transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
-            <div className="bg-white/3 border border-white/10 rounded-2xl p-8">
-              <h3 className="font-display font-bold text-2xl text-white uppercase mb-8">Envie sua mensagem</h3>
+            <div className="bg-[#F8FAFC] border border-slate-200 rounded-2xl p-8 shadow-sm">
+              <h3 className="font-display font-bold text-2xl text-[#1E293B] uppercase mb-8">Envie sua mensagem</h3>
 
               {submitted ? (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 bg-green-500/20 border border-green-500/40 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-green-100 border border-green-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
                     </svg>
                   </div>
-                  <h4 className="font-display font-bold text-xl text-white mb-2">Mensagem enviada!</h4>
-                  <p className="font-body text-gray-400 text-sm">Entraremos em contato em breve.</p>
+                  <h4 className="font-display font-bold text-xl text-[#1E293B] mb-2">Mensagem enviada!</h4>
+                  <p className="font-body text-slate-500 text-sm">Entraremos em contato em breve.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label className="block font-body text-xs text-gray-500 uppercase tracking-wider mb-2">Seu e-mail</label>
+                    <label className="block font-body text-xs text-slate-400 uppercase tracking-wider mb-2">Seu e-mail</label>
                     <input
                       type="email" required placeholder="exemplo@gmail.com"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 focus:border-[#CC1B1B] rounded-xl px-4 py-3 font-body text-sm text-white placeholder-gray-600 outline-none transition-colors"
+                      className="w-full bg-white border border-slate-200 focus:border-[#1A56DB] rounded-xl px-4 py-3 font-body text-sm text-slate-700 placeholder-slate-300 outline-none transition-colors shadow-sm"
                     />
                   </div>
                   <div>
-                    <label className="block font-body text-xs text-gray-500 uppercase tracking-wider mb-2">Assunto</label>
+                    <label className="block font-body text-xs text-slate-400 uppercase tracking-wider mb-2">Assunto</label>
                     <input
-                      type="text" required placeholder="Deixe-nos saber como podemos ajudar você"
+                      type="text" required placeholder="Como podemos ajudar você?"
                       value={formState.subject}
                       onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 focus:border-[#CC1B1B] rounded-xl px-4 py-3 font-body text-sm text-white placeholder-gray-600 outline-none transition-colors"
+                      className="w-full bg-white border border-slate-200 focus:border-[#1A56DB] rounded-xl px-4 py-3 font-body text-sm text-slate-700 placeholder-slate-300 outline-none transition-colors shadow-sm"
                     />
                   </div>
                   <div>
-                    <label className="block font-body text-xs text-gray-500 uppercase tracking-wider mb-2">Sua mensagem</label>
+                    <label className="block font-body text-xs text-slate-400 uppercase tracking-wider mb-2">Sua mensagem</label>
                     <textarea
                       required placeholder="Deixe sua mensagem..." rows={5}
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 focus:border-[#CC1B1B] rounded-xl px-4 py-3 font-body text-sm text-white placeholder-gray-600 outline-none transition-colors resize-none"
+                      className="w-full bg-white border border-slate-200 focus:border-[#1A56DB] rounded-xl px-4 py-3 font-body text-sm text-slate-700 placeholder-slate-300 outline-none transition-colors resize-none shadow-sm"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="btn-primary w-full bg-[#CC1B1B] hover:bg-red-600 text-white font-body font-semibold py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-[#CC1B1B]/30"
+                    className="btn-primary w-full bg-[#1A56DB] hover:bg-[#1E429F] text-white font-body font-semibold py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-[#1A56DB]/30"
                   >
                     Enviar mensagem
                   </button>

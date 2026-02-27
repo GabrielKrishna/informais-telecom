@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,31 +18,21 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0D0D1A]/95 backdrop-blur-md border-b border-[#1F2060] shadow-lg shadow-black/30"
-          : "bg-transparent"
+          ? "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm shadow-slate-200/80"
+          : "bg-white/80 backdrop-blur-sm"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-9 h-9">
-            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-              <rect width="36" height="36" rx="8" fill="#1E1E3A"/>
-              <path d="M10 26 L18 10 L26 26" stroke="#CC1B1B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <circle cx="18" cy="10" r="2.5" fill="#CC1B1B"/>
-              <path d="M8 26 L28 26" stroke="#2B2E8C" strokeWidth="2.5" strokeLinecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <div>
-              <span className="font-display font-black text-xl tracking-tight text-white">infor</span>
-              <span className="font-display font-black text-xl tracking-tight text-[#CC1B1B]">mais</span>
-            </div>
-            <span className="block font-body text-[10px] text-gray-400 tracking-widest uppercase leading-none -mt-1">
-              Telecom
-            </span>
-          </div>
-        </Link>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Informais Telecom"
+              width={160}
+              height={60}
+              className="object-contain"
+            />
+          </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -55,7 +46,7 @@ export default function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="nav-link font-body text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              className="nav-link font-body text-sm font-medium text-slate-600 hover:text-[#1A56DB] transition-colors"
             >
               {item.label}
             </Link>
@@ -75,12 +66,18 @@ export default function Navbar() {
             </svg>
             WhatsApp
           </a>
+          <a
+            href="#planos"
+            className="btn-primary bg-[#1A56DB] hover:bg-[#1E429F] text-white font-body font-semibold text-sm px-5 py-2 rounded-lg transition-colors"
+          >
+            Ver planos
+          </a>
         </div>
 
         {/* Mobile menu button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+          className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
           aria-label="Menu"
         >
           <div className="w-5 h-4 flex flex-col justify-between">
@@ -93,7 +90,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div className={`md:hidden transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-96" : "max-h-0"}`}>
-        <div className="bg-[#0D0D1A]/98 backdrop-blur-md border-t border-[#1F2060] px-6 py-4 flex flex-col gap-4">
+        <div className="bg-white border-t border-slate-100 px-6 py-4 flex flex-col gap-4">
           {[
             { label: "Início", href: "#inicio" },
             { label: "Sobre", href: "#sobre" },
@@ -105,7 +102,7 @@ export default function Navbar() {
               key={item.label}
               href={item.href}
               onClick={() => setMenuOpen(false)}
-              className="font-body text-gray-300 hover:text-white py-1 border-b border-white/5 transition-colors"
+              className="font-body text-slate-600 hover:text-[#1A56DB] py-1 border-b border-slate-100 transition-colors"
             >
               {item.label}
             </Link>
