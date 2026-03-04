@@ -117,22 +117,23 @@ export default function Services() {
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className="srv-card group bg-white rounded-2xl p-7 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="srv-card group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 style={{ opacity: 0, transform: "translateY(30px)", transition: `all 0.6s ease ${index * 0.08}s` }}
               >
-                {/* 3D icon */}
-                <div className="w-14 h-14 flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-3deg]">
-                  <Image
-                    src={service.icon}
-                    alt={service.title}
-                    width={48}
-                    height={48}
-                    className="w-10 h-10 object-contain"
-                  />
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-3deg]">
+                    <Image
+                      src={service.icon}
+                      alt={service.title}
+                      width={48}
+                      height={48}
+                      className="w-10 h-10 object-contain"
+                    />
+                  </div>
+                  <h3 className="font-display font-bold text-lg text-[#1E293B] uppercase group-hover:text-[#1A56DB] transition-colors">
+                    {service.title}
+                  </h3>
                 </div>
-                <h3 className="font-display font-bold text-lg text-[#1E293B] uppercase mb-2 group-hover:text-[#1A56DB] transition-colors">
-                  {service.title}
-                </h3>
                 <p className="font-body text-slate-500 text-sm leading-relaxed">{service.description}</p>
               </div>
             ))}

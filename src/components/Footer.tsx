@@ -67,7 +67,6 @@ export default function Footer() {
 
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="font-body text-xs text-slate-500">© {currentYear} Informais Telecom — Todos os Direitos Reservados.</p>
-          <p className="font-body text-xs text-slate-600">Desenvolvido com ❤️ pela <span className="text-slate-400">Informais Informática</span></p>
         </div>
       </div>
     </footer>

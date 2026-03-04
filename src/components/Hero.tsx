@@ -104,8 +104,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Fade into white About section — gradual */}
-      <div className="absolute bottom-0 left-0 right-0 h-52 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 45%, transparent 100%)" }} />
+      {/* Fade into white About section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
     </section>
   );
 }

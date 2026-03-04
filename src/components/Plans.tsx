@@ -59,8 +59,8 @@ export default function Plans() {
             -45deg,
             transparent,
             transparent 20px,
-            rgba(26, 86, 219, 0.06) 20px,
-            rgba(26, 86, 219, 0.06) 24px
+            rgba(26, 86, 219, 0.12) 20px,
+            rgba(26, 86, 219, 0.12) 24px
           )`,
         }}
       />
@@ -153,10 +153,6 @@ export default function Plans() {
             </div>
           ))}
         </div>
-
-        <p className={`text-center font-body text-slate-400 text-sm mt-10 transition-all duration-700 delay-500 ${visible ? "opacity-100" : "opacity-0"}`}>
-          * Preços sujeitos à disponibilidade na sua região.
-        </p>
       </div>
     </section>
   );
