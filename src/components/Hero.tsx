@@ -29,7 +29,7 @@ export default function Hero() {
       {/* Full-bleed background image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=85"
+          src="/working.png"
           alt="Equipe trabalhando com internet de qualidade"
           fill
           className="object-cover object-center"

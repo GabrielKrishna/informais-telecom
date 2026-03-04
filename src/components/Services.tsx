@@ -65,7 +65,7 @@ export default function Services() {
       {/* Banner with supermarket image */}
       <div className="relative h-75 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1764795849833-6e9d6e399a77?w=1600&q=80"
+          src="/cashier.png"
           alt="Supermercado com operação estável graças ao link dedicado"
           fill
           className="object-cover object-[50%_80%]"
