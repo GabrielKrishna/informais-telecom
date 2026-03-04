@@ -27,6 +27,7 @@ export default function About() {
 
   return (
     <section id="sobre" ref={ref} className="relative overflow-hidden bg-white">
+      <div className="h-1.5 bg-[#1A56DB]" />
       <div className="max-w-7xl mx-auto px-8 md:px-16 py-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -48,18 +49,18 @@ export default function About() {
               </span>
             </h2>
 
-            <div className="flex items-center gap-8 mt-10">
+            <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
               {[
-                { value: "5+",    label: "Anos"    },
-                { value: "99.9%", label: "Uptime"  },
-                { value: "24/7",  label: "Suporte" },
-              ].map((stat, i, arr) => (
-                <div key={stat.label} className="flex items-center gap-8">
-                  <div className="text-center">
-                    <div className="font-display font-black text-4xl text-[#1A56DB] leading-none">{stat.value}</div>
-                    <div className="font-body text-xs text-slate-400 uppercase tracking-wider mt-1.5">{stat.label}</div>
+                { icon: "🏢", title: "Parte da Informais Informática", desc: "Empresa consolidada no mercado de tecnologia regional" },
+                { icon: "📡", title: "Cobertura em expansão", desc: "Novos bairros e regiões atendidos todo mês" },
+                { icon: "🛠️", title: "Suporte local", desc: "Time técnico próximo, atendimento rápido e presencial" },
+              ].map((fact, i, arr) => (
+                <div key={fact.title} className="flex items-start gap-3">
+                  <div className="flex flex-col">
+                    <span className="font-body font-semibold text-[#1E293B] text-sm">{fact.title}</span>
+                    <span className="font-body text-slate-400 text-xs mt-0.5 leading-relaxed">{fact.desc}</span>
                   </div>
-                  {i < arr.length - 1 && <div className="w-px h-10 bg-slate-200" />}
+                  {i < arr.length - 1 && <div className="hidden sm:block w-px h-10 bg-slate-200 ml-4 mt-1 flex-shrink-0" />}
                 </div>
               ))}
             </div>

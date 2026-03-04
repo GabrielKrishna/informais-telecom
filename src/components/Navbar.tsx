@@ -37,7 +37,7 @@ export default function Navbar() {
             Infor<span className="text-[#FBBF24]">mais</span>
           </span>
           <span className="ml-1.5 font-body text-[10px] uppercase tracking-[0.18em] text-white/40 border-l border-white/20 pl-1.5 leading-tight">
-            Telecom
+            Fibra
           </span>
         </Link>
 

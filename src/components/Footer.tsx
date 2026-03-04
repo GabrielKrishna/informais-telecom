@@ -18,7 +18,7 @@ export default function Footer() {
                 Infor<span className="text-[#FBBF24]">mais</span>
               </span>
               <span className="font-body text-[10px] uppercase tracking-[0.18em] text-white/30 border-l border-white/15 pl-1.5">
-                Telecom
+                Fibra
               </span>
             </div>
             <p className="font-body text-slate-400 text-xs leading-relaxed mt-3 max-w-[200px]">
