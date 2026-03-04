@@ -94,7 +94,7 @@ export default function Hero() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="bg-white/10 border border-white/20 backdrop-blur-sm text-white rounded-2xl px-5 py-3"
+                className="bg-white/20 border border-white/30 backdrop-blur-sm text-white rounded-2xl px-5 py-3"
               >
                 <div className="font-display font-black text-xl leading-none">{stat.value}</div>
                 <div className="font-body text-xs mt-0.5 opacity-60">{stat.label}</div>

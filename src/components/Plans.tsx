@@ -59,8 +59,8 @@ export default function Plans() {
             -45deg,
             transparent,
             transparent 20px,
-            rgba(26, 86, 219, 0.12) 20px,
-            rgba(26, 86, 219, 0.12) 24px
+            rgba(26, 86, 219, 0.2) 20px,
+            rgba(26, 86, 219, 0.2) 24px
           )`,
         }}
       />
