@@ -44,7 +44,7 @@ export default function About() {
               <span className="text-[#1A56DB]">Informais</span>
               <br />
               <span className="relative inline-block">
-                Telecom
+                Fibra
                 <span className="absolute -bottom-1 left-0 right-0 h-2 bg-[#FBBF24] rounded-full block" />
               </span>
             </h2>

@@ -88,7 +88,7 @@ export default function Hero() {
           {/* Stats pills — all uniform glass style */}
           <div className="initially-hidden delay-400 flex flex-wrap gap-3 pt-2">
             {[
-              { value: "600 Mbps", label: "de velocidade"   },
+              { value: "1000 Mbps", label: "de velocidade"   },
               { value: "99.9%",    label: "uptime garantido" },
               { value: "24/7",     label: "suporte técnico"  },
             ].map((stat) => (

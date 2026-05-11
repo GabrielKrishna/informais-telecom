@@ -33,7 +33,7 @@ const plans = [
     {
     id: "dedicado",
     name: "Link dedicado",
-    speed: "600",
+    speed: "Sob consulta. Embaixo no botao: Falar com expecialista",
     price: "115",
     description: "Solução voltada para o setor corporativo, garantindo segurança e estabilidade na conexão.",
     features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online", "Prioridade no suporte", "IP Fixo incluso"],
