@@ -30,6 +30,15 @@ const plans = [
     features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online", "Prioridade no suporte", "IP Fixo incluso"],
     highlight: false,
   },
+    {
+    id: "dedicado",
+    name: "Link dedicado",
+    speed: "600",
+    price: "115",
+    description: "Máxima velocidade com link dedicado para sua operação.",
+    features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online", "Prioridade no suporte", "IP Fixo incluso"],
+    highlight: false,
+  },
 ];
 
 export default function Plans() {

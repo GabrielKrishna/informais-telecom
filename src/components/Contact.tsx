@@ -23,7 +23,7 @@ export default function Contact() {
         </svg>
       ),
       label: "WhatsApp",
-      value: "(00) 00000-0000",
+      value: "(64) 90000-0000",
       href: "https://wa.me/5500000000000",
       iconColor: "text-[#25D366]",
       rowBg: "bg-[#F0FDF4]",
@@ -50,7 +50,7 @@ export default function Contact() {
         </svg>
       ),
       label: "Localização",
-      value: "Sua cidade, Estado",
+      value: "Sua Jataí, GO",
       href: "#",
       iconColor: "text-[#D97706]",
       rowBg: "bg-[#FFFBEB]",
