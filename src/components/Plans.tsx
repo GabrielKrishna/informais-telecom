@@ -7,8 +7,8 @@ const plans = [
     id: "inicial",
     name: "Plano Residencial",
     speed: "500",
-    price: "109,90",
-    description: "Ideal para residências e pequenos negócios.",
+    price: "109",
+    description: "Ideal para residências.",
     features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online"],
     highlight: false,
   },
@@ -16,8 +16,8 @@ const plans = [
     id: "intermediario",
     name: "Plano Plus",
     speed: "700",
-    price: "129,90",
-    description: "O mais escolhido. Perfeito para empresas e famílias exigentes.",
+    price: "129",
+    description: "O mais escolhido. Perfeito para pequenas empresas e famílias exigentes.",
     features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online", "Prioridade no suporte"],
     highlight: true,
   },
@@ -25,9 +25,9 @@ const plans = [
     id: "avancado",
     name: "Plano Premium",
     speed: "1000",
-    price: "159,90",
-    description: "Máxima velocidade com link dedicado para sua operação.",
-    features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online", "Prioridade no suporte", "IP Fixo incluso"],
+    price: "159",
+    description: "Conexão ultra rápida para streaming, jogos e trabalho sem interrupções.",
+    features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online", "Prioridade no suporte"],
     highlight: false,
   },
     {
@@ -35,7 +35,7 @@ const plans = [
     name: "Link dedicado",
     speed: "600",
     price: "115",
-    description: "Máxima velocidade com link dedicado para sua operação.",
+    description: "Solução voltada para o setor corporativo, garantindo segurança e estabilidade na conexão.",
     features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online", "Prioridade no suporte", "IP Fixo incluso"],
     highlight: false,
   },
@@ -130,7 +130,7 @@ export default function Plans() {
 
                 <div className="mb-8 pb-8 border-b border-slate-100">
                   <span className="font-body text-sm text-slate-400">por </span>
-                  <span className="font-display font-black text-2xl text-[#1E293B]">R$ {plan.price},00</span>
+                  <span className="font-display font-black text-2xl text-[#1E293B]">R$ {plan.price},90</span>
                   <span className="font-body text-sm text-slate-400">/mês</span>
                 </div>
 
