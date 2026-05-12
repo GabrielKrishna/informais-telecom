@@ -11,6 +11,7 @@ const plans = [
     description: "Ideal para residências.",
     features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online"],
     highlight: false,
+    dedicated: false,
   },
   {
     id: "intermediario",
@@ -20,6 +21,7 @@ const plans = [
     description: "O mais escolhido. Perfeito para pequenas empresas e famílias exigentes.",
     features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online", "Prioridade no suporte"],
     highlight: true,
+    dedicated: false,
   },
   {
     id: "avancado",
@@ -29,15 +31,17 @@ const plans = [
     description: "Conexão ultra rápida para streaming, jogos e trabalho sem interrupções.",
     features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online", "Prioridade no suporte"],
     highlight: false,
+    dedicated: false,
   },
-    {
+  {
     id: "dedicado",
-    name: "Link dedicado",
-    speed: "Sob consulta. Embaixo no botao: Falar com expecialista",
-    price: "115",
+    name: "Link Dedicado",
+    speed: null,
+    price: null,
     description: "Solução voltada para o setor corporativo, garantindo segurança e estabilidade na conexão.",
     features: ["Fibra óptica", "Wi-Fi 6 grátis", "Suporte a IPv6", "Suporte online", "Prioridade no suporte", "IP Fixo incluso"],
     highlight: false,
+    dedicated: true,
   },
 ];
 
@@ -90,74 +94,113 @@ export default function Plans() {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-center">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6 items-center">
           {plans.map((plan, index) => (
+            // Wrapper exclusivo para animação de entrada — o delay fica aqui e não vaza para o hover
             <div
               key={plan.id}
-              className={`plan-card relative rounded-2xl overflow-hidden bg-white transition-all duration-700 ${
-                plan.highlight
-                  ? "shadow-2xl shadow-[#1A56DB]/20 scale-105"
-                  : "shadow-lg shadow-[#1A56DB]/10"
-              } ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
+              className={`transition-all duration-700 ${
+                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className={`w-full bg-[#1A56DB] ${plan.highlight ? "h-1.5" : "h-px"}`} />
+              {/* Card sem delay — hover responde imediatamente */}
+              <div
+                className={`plan-card relative rounded-2xl overflow-hidden bg-white transition-[box-shadow,transform] duration-200 ${
+                  plan.highlight
+                    ? "shadow-2xl shadow-[#1A56DB]/20 scale-105"
+                    : plan.dedicated
+                    ? "shadow-lg shadow-[#0D1B3E]/15"
+                    : "shadow-lg shadow-[#1A56DB]/10"
+                }`}
+              >
+                <div className={`w-full ${plan.dedicated ? "bg-[#0D1B3E]" : "bg-[#1A56DB]"} ${plan.highlight ? "h-1.5" : "h-px"}`} />
 
-              {plan.highlight && (
-                <div className="bg-[#FBBF24] text-center py-2">
-                  <span className="font-display font-bold text-xs uppercase tracking-widest text-[#1E293B]">
-                    ⚡ Mais popular
-                  </span>
-                </div>
-              )}
+                {plan.highlight && (
+                  <div className="bg-[#FBBF24] text-center py-2">
+                    <span className="font-display font-bold text-xs uppercase tracking-widest text-[#1E293B]">
+                      ⚡ Mais popular
+                    </span>
+                  </div>
+                )}
 
-              <div className={`p-8 ${plan.highlight ? "py-10" : "py-8"}`}>
-                <h3 className="font-display font-bold text-lg uppercase text-[#1E293B] mb-1">
-                  {plan.name}
-                </h3>
-                <p className="font-body text-slate-400 text-sm mb-6">
-                  {plan.description}
-                </p>
+                {plan.dedicated && (
+                  <div className="bg-[#0D1B3E] text-center py-2">
+                    <span className="font-display font-bold text-xs uppercase tracking-widest text-white/80">
+                      🏢 Corporativo
+                    </span>
+                  </div>
+                )}
 
-                <div className="mb-1">
-                  <span className={`font-display font-black text-7xl leading-none ${plan.highlight ? "text-[#1A56DB]" : "text-[#1E293B]"}`}>
-                    {plan.speed}
-                  </span>
-                  <span className="font-display font-bold text-2xl ml-2 text-[#FBBF24]">
-                    Mega
-                  </span>
-                </div>
+                <div className={`p-5 xl:p-6 ${plan.highlight ? "xl:py-10" : "xl:py-8"}`}>
+                  <h3 className="font-display font-bold text-lg uppercase text-[#1E293B] mb-1">
+                    {plan.name}
+                  </h3>
+                  <p className="font-body text-slate-400 text-sm mb-6">
+                    {plan.description}
+                  </p>
 
-                <div className="mb-8 pb-8 border-b border-slate-100">
-                  <span className="font-body text-sm text-slate-400">por </span>
-                  <span className="font-display font-black text-2xl text-[#1E293B]">R$ {plan.price},90</span>
-                  <span className="font-body text-sm text-slate-400">/mês</span>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3 font-body text-sm text-slate-600">
-                      <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${plan.highlight ? "bg-[#EBF5FF]" : "bg-slate-100"}`}>
-                        <svg className={`w-3 h-3 ${plan.highlight ? "text-[#1A56DB]" : "text-slate-400"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/>
-                        </svg>
+                  {plan.dedicated ? (
+                    <div className="mb-8 pb-8 border-b border-slate-100">
+                      <div className="flex flex-col items-start gap-1 mb-3">
+                        <span className="font-display font-black text-3xl leading-none text-[#0D1B3E]">
+                          Sob consulta
+                        </span>
                       </div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                      <p className="font-body text-sm text-slate-400">
+                        Velocidade e preço personalizados conforme a sua necessidade.
+                      </p>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="mb-1">
+                        <span className={`font-display font-black text-7xl leading-none ${plan.highlight ? "text-[#1A56DB]" : "text-[#1E293B]"}`}>
+                          {plan.speed}
+                        </span>
+                        <span className="font-display font-bold text-2xl ml-2 text-[#FBBF24]">
+                          Mega
+                        </span>
+                      </div>
 
-                <a
-                  href="https://wa.me/5500000000000"
-                  target="_blank" rel="noopener noreferrer"
-                  className={`btn-primary block text-center font-body font-semibold py-4 rounded-xl transition-all ${
-                    plan.highlight
-                      ? "bg-[#FBBF24] hover:bg-[#D97706] text-[#1E293B] shadow-lg shadow-[#FBBF24]/30"
-                      : "bg-[#1A56DB] hover:bg-[#1E429F] text-white shadow-md shadow-[#1A56DB]/20"
-                  }`}
-                >
-                  Quero esse!
-                </a>
+                      <div className="mb-8 pb-8 border-b border-slate-100">
+                        <span className="font-body text-sm text-slate-400">por </span>
+                        <span className="font-display font-black text-2xl text-[#1E293B]">R$ {plan.price},90</span>
+                        <span className="font-body text-sm text-slate-400">/mês</span>
+                      </div>
+                    </>
+                  )}
+
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-3 font-body text-sm text-slate-600">
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
+                          plan.highlight ? "bg-[#EBF5FF]" : plan.dedicated ? "bg-[#0D1B3E]/10" : "bg-slate-100"
+                        }`}>
+                          <svg className={`w-3 h-3 ${
+                            plan.highlight ? "text-[#1A56DB]" : plan.dedicated ? "text-[#0D1B3E]" : "text-slate-400"
+                          }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/>
+                          </svg>
+                        </div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href="https://wa.me/5500000000000"
+                    target="_blank" rel="noopener noreferrer"
+                    className={`btn-primary block text-center font-body font-semibold py-4 rounded-xl transition-all ${
+                      plan.highlight
+                        ? "bg-[#FBBF24] hover:bg-[#D97706] text-[#1E293B] shadow-lg shadow-[#FBBF24]/30"
+                        : plan.dedicated
+                        ? "bg-[#0D1B3E] hover:bg-[#1A2F5E] text-white shadow-md shadow-[#0D1B3E]/20"
+                        : "bg-[#1A56DB] hover:bg-[#1E429F] text-white shadow-md shadow-[#1A56DB]/20"
+                    }`}
+                  >
+                    {plan.dedicated ? "Falar com um especialista" : "Quero esse!"}
+                  </a>
+                </div>
               </div>
             </div>
           ))}

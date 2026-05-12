@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,14 +32,16 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        {/* Logo — text only */}
-        <Link href="/" className="flex items-center gap-1 leading-none">
-          <span className="font-display font-black text-2xl uppercase tracking-tight text-white">
-            Infor<span className="text-[#FBBF24]">mais</span>
-          </span>
-          <span className="ml-1.5 font-body text-[10px] uppercase tracking-[0.18em] text-white/40 border-l border-white/20 pl-1.5 leading-tight">
-            Fibra
-          </span>
+        {/* Logo — image */}
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={200}
+            height={56}
+            className="h-14 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}
